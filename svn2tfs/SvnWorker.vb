@@ -1,4 +1,5 @@
 ﻿Imports SharpSvn
+Imports SharpSvn.Security
 
 Public Class SvnWorker
 
@@ -46,12 +47,20 @@ Public Class SvnWorker
 
         client = New SvnClient
 
+        AddHandler client.Authentication.SslServerTrustHandlers, AddressOf SvnSslTrusthandersl_event
+
         client.Authentication.ClearAuthenticationCache()
 
         client.Authentication.DefaultCredentials =
             New System.Net.NetworkCredential(UserName,
                                              Password)
 
+    End Sub
+
+    Private Sub SvnSslTrusthandersl_event(sender As Object, e As SvnSslServerTrustEventArgs)
+        e.AcceptedFailures = e.Failures
+
+        e.Save = True
     End Sub
 
     Private Sub Open()

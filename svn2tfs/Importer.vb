@@ -207,13 +207,15 @@ Public Class Importer
                       ByVal tfsDirectory As String,
                       ByVal userMap As Dictionary(Of String, String),
                       ByVal tfsCleanUp As Boolean,
-                      ByVal hasFirstRevisionToBeOverriddenWithRecursiveAdds As Boolean)
+                      ByVal hasFirstRevisionToBeOverriddenWithRecursiveAdds As Boolean,
+                      ByVal username As String,
+                      ByVal password As String)
 
         Console.WriteLine("Starting importing...")
         RaiseEvent ProgressStateChange(Microsoft.WindowsAPICodePack.Taskbar.TaskbarProgressBarState.Indeterminate)
 
         'Create workers
-        Using tfs = New TfsWorker(tfsUri, tfsWorkspaceLocalPath)
+        Using tfs = New TfsWorker(tfsUri, tfsWorkspaceLocalPath, username, password)
 
             Dim svn = New SvnWorker(svnUri, svnDirectory, svnUserName, svnPassword)
             Dim tfsWorkspace = tfs.GetWorkspace(tfsCollection, tfsProject, tfsDirectory)

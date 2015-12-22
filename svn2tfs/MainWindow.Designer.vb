@@ -22,10 +22,11 @@ Partial Class MainWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim MySettings11 As svn2tfs.My.MySettings = New svn2tfs.My.MySettings()
-        Dim MySettings12 As svn2tfs.My.MySettings = New svn2tfs.My.MySettings()
+        Dim MySettings2 As svn2tfs.My.MySettings = New svn2tfs.My.MySettings()
+        Dim MySettings3 As svn2tfs.My.MySettings = New svn2tfs.My.MySettings()
+        Dim MySettings4 As svn2tfs.My.MySettings = New svn2tfs.My.MySettings()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainWindow))
-        Dim MySettings10 As svn2tfs.My.MySettings = New svn2tfs.My.MySettings()
+        Dim MySettings1 As svn2tfs.My.MySettings = New svn2tfs.My.MySettings()
         Me.userMapOpenFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.standardImportRadioButton = New System.Windows.Forms.RadioButton()
         Me.mainTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
@@ -85,6 +86,10 @@ Partial Class MainWindow
         Me.Label14 = New System.Windows.Forms.Label()
         Me.cleanUpTFSCheckBox = New System.Windows.Forms.CheckBox()
         Me.customTemporaryFolderOpenDialog = New System.Windows.Forms.FolderBrowserDialog()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.passwordBox = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.usernameBox = New System.Windows.Forms.TextBox()
         Me.mainTableLayoutPanel.SuspendLayout()
         Me.consoleTabControl.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -125,10 +130,10 @@ Partial Class MainWindow
         Me.mainTableLayoutPanel.Name = "mainTableLayoutPanel"
         Me.mainTableLayoutPanel.Padding = New System.Windows.Forms.Padding(10)
         Me.mainTableLayoutPanel.RowCount = 3
-        Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 337.0!))
+        Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 394.0!))
         Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.mainTableLayoutPanel.Size = New System.Drawing.Size(561, 597)
+        Me.mainTableLayoutPanel.Size = New System.Drawing.Size(561, 701)
         Me.mainTableLayoutPanel.TabIndex = 17
         '
         'consoleTabControl
@@ -136,11 +141,11 @@ Partial Class MainWindow
         Me.consoleTabControl.Controls.Add(Me.TabPage1)
         Me.consoleTabControl.Controls.Add(Me.WarningsTabPage)
         Me.consoleTabControl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.consoleTabControl.Location = New System.Drawing.Point(13, 396)
+        Me.consoleTabControl.Location = New System.Drawing.Point(13, 453)
         Me.consoleTabControl.Multiline = True
         Me.consoleTabControl.Name = "consoleTabControl"
         Me.consoleTabControl.SelectedIndex = 0
-        Me.consoleTabControl.Size = New System.Drawing.Size(535, 188)
+        Me.consoleTabControl.Size = New System.Drawing.Size(535, 235)
         Me.consoleTabControl.TabIndex = 102
         '
         'TabPage1
@@ -149,7 +154,7 @@ Partial Class MainWindow
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(527, 162)
+        Me.TabPage1.Size = New System.Drawing.Size(527, 209)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Output"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -163,7 +168,7 @@ Partial Class MainWindow
         Me.logTextBox.Name = "logTextBox"
         Me.logTextBox.ReadOnly = True
         Me.logTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.logTextBox.Size = New System.Drawing.Size(521, 156)
+        Me.logTextBox.Size = New System.Drawing.Size(521, 203)
         Me.logTextBox.TabIndex = 17
         '
         'WarningsTabPage
@@ -185,7 +190,7 @@ Partial Class MainWindow
         Me.errorsListView.GridLines = True
         Me.errorsListView.Location = New System.Drawing.Point(3, 3)
         Me.errorsListView.Name = "errorsListView"
-        Me.errorsListView.Size = New System.Drawing.Size(521, 199)
+        Me.errorsListView.Size = New System.Drawing.Size(521, 156)
         Me.errorsListView.TabIndex = 0
         Me.errorsListView.UseCompatibleStateImageBehavior = False
         Me.errorsListView.View = System.Windows.Forms.View.Details
@@ -202,7 +207,7 @@ Partial Class MainWindow
         Me.buttonsPanel.Controls.Add(Me.importButton)
         Me.buttonsPanel.Controls.Add(Me.abortButton)
         Me.buttonsPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.buttonsPanel.Location = New System.Drawing.Point(13, 350)
+        Me.buttonsPanel.Location = New System.Drawing.Point(13, 407)
         Me.buttonsPanel.Name = "buttonsPanel"
         Me.buttonsPanel.Size = New System.Drawing.Size(535, 40)
         Me.buttonsPanel.TabIndex = 14
@@ -252,12 +257,16 @@ Partial Class MainWindow
         Me.upperTabControl.Location = New System.Drawing.Point(13, 13)
         Me.upperTabControl.Name = "upperTabControl"
         Me.upperTabControl.SelectedIndex = 0
-        Me.upperTabControl.Size = New System.Drawing.Size(535, 331)
+        Me.upperTabControl.Size = New System.Drawing.Size(535, 388)
         Me.upperTabControl.TabIndex = 19
         '
         'TabPage3
         '
         Me.TabPage3.AutoScroll = True
+        Me.TabPage3.Controls.Add(Me.Label21)
+        Me.TabPage3.Controls.Add(Me.passwordBox)
+        Me.TabPage3.Controls.Add(Me.Label22)
+        Me.TabPage3.Controls.Add(Me.usernameBox)
         Me.TabPage3.Controls.Add(Me.Label20)
         Me.TabPage3.Controls.Add(Me.svnDirectoryTextBox)
         Me.TabPage3.Controls.Add(Me.Label19)
@@ -290,7 +299,7 @@ Partial Class MainWindow
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(527, 305)
+        Me.TabPage3.Size = New System.Drawing.Size(527, 362)
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.Text = "Basics"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -306,30 +315,30 @@ Partial Class MainWindow
         '
         'svnDirectoryTextBox
         '
-        MySettings11.customTemporaryFolder = ""
-        MySettings11.hasAcceptedAgreement = False
-        MySettings11.lastDeleteTfsProject = False
-        MySettings11.lastFromRevision = "1"
-        MySettings11.lastOverrideFirstAction = False
-        MySettings11.lastReplayAllActions = True
-        MySettings11.lastSvnUrl = ""
-        MySettings11.lastSvnUserName = ""
-        MySettings11.lastTfsCollection = ""
-        MySettings11.lastTfsDirectory = ""
-        MySettings11.lastTfsProject = ""
-        MySettings11.lastTfsURL = ""
-        MySettings11.lastTfsUserName = ""
-        MySettings11.lastToRevision = "HEAD"
-        MySettings11.lastUserMappingFileName = ""
-        MySettings11.lstTfsDomain = ""
-        MySettings11.SettingsKey = ""
-        MySettings11.userCustomTemporaryFolder = False
-        Me.svnDirectoryTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings11, "lastSvnUrl", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        MySettings2.customTemporaryFolder = ""
+        MySettings2.hasAcceptedAgreement = False
+        MySettings2.lastDeleteTfsProject = False
+        MySettings2.lastFromRevision = "1"
+        MySettings2.lastOverrideFirstAction = False
+        MySettings2.lastReplayAllActions = True
+        MySettings2.lastSvnUrl = ""
+        MySettings2.lastSvnUserName = ""
+        MySettings2.lastTfsCollection = ""
+        MySettings2.lastTfsDirectory = ""
+        MySettings2.lastTfsProject = ""
+        MySettings2.lastTfsURL = ""
+        MySettings2.lastTfsUserName = ""
+        MySettings2.lastToRevision = "HEAD"
+        MySettings2.lastUserMappingFileName = ""
+        MySettings2.lstTfsDomain = ""
+        MySettings2.SettingsKey = ""
+        MySettings2.userCustomTemporaryFolder = False
+        Me.svnDirectoryTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings2, "lastSvnUrl", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.svnDirectoryTextBox.Location = New System.Drawing.Point(336, 20)
         Me.svnDirectoryTextBox.Name = "svnDirectoryTextBox"
         Me.svnDirectoryTextBox.Size = New System.Drawing.Size(161, 21)
         Me.svnDirectoryTextBox.TabIndex = 25
-        Me.svnDirectoryTextBox.Text = MySettings11.lastSvnUrl
+        Me.svnDirectoryTextBox.Text = MySettings2.lastSvnUrl
         '
         'Label19
         '
@@ -397,30 +406,30 @@ Partial Class MainWindow
         '
         'svnUserNameTextBox
         '
-        MySettings12.customTemporaryFolder = ""
-        MySettings12.hasAcceptedAgreement = False
-        MySettings12.lastDeleteTfsProject = False
-        MySettings12.lastFromRevision = "1"
-        MySettings12.lastOverrideFirstAction = False
-        MySettings12.lastReplayAllActions = True
-        MySettings12.lastSvnUrl = ""
-        MySettings12.lastSvnUserName = ""
-        MySettings12.lastTfsCollection = ""
-        MySettings12.lastTfsDirectory = ""
-        MySettings12.lastTfsProject = ""
-        MySettings12.lastTfsURL = ""
-        MySettings12.lastTfsUserName = ""
-        MySettings12.lastToRevision = "HEAD"
-        MySettings12.lastUserMappingFileName = ""
-        MySettings12.lstTfsDomain = ""
-        MySettings12.SettingsKey = ""
-        MySettings12.userCustomTemporaryFolder = False
-        Me.svnUserNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings12, "lastSvnUserName", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        MySettings3.customTemporaryFolder = ""
+        MySettings3.hasAcceptedAgreement = False
+        MySettings3.lastDeleteTfsProject = False
+        MySettings3.lastFromRevision = "1"
+        MySettings3.lastOverrideFirstAction = False
+        MySettings3.lastReplayAllActions = True
+        MySettings3.lastSvnUrl = ""
+        MySettings3.lastSvnUserName = ""
+        MySettings3.lastTfsCollection = ""
+        MySettings3.lastTfsDirectory = ""
+        MySettings3.lastTfsProject = ""
+        MySettings3.lastTfsURL = ""
+        MySettings3.lastTfsUserName = ""
+        MySettings3.lastToRevision = "HEAD"
+        MySettings3.lastUserMappingFileName = ""
+        MySettings3.lstTfsDomain = ""
+        MySettings3.SettingsKey = ""
+        MySettings3.userCustomTemporaryFolder = False
+        Me.svnUserNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings3, "lastSvnUserName", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.svnUserNameTextBox.Location = New System.Drawing.Point(100, 47)
         Me.svnUserNameTextBox.Name = "svnUserNameTextBox"
         Me.svnUserNameTextBox.Size = New System.Drawing.Size(160, 21)
         Me.svnUserNameTextBox.TabIndex = 2
-        Me.svnUserNameTextBox.Text = MySettings12.lastSvnUserName
+        Me.svnUserNameTextBox.Text = MySettings3.lastSvnUserName
         '
         'openUserMappingFileNameButton
         '
@@ -433,21 +442,39 @@ Partial Class MainWindow
         '
         'svnUrlTextBox
         '
-        Me.svnUrlTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings10, "lastSvnUrl", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        MySettings4.customTemporaryFolder = ""
+        MySettings4.hasAcceptedAgreement = False
+        MySettings4.lastDeleteTfsProject = False
+        MySettings4.lastFromRevision = "1"
+        MySettings4.lastOverrideFirstAction = False
+        MySettings4.lastReplayAllActions = True
+        MySettings4.lastSvnUrl = ""
+        MySettings4.lastSvnUserName = ""
+        MySettings4.lastTfsCollection = ""
+        MySettings4.lastTfsDirectory = ""
+        MySettings4.lastTfsProject = ""
+        MySettings4.lastTfsURL = ""
+        MySettings4.lastTfsUserName = ""
+        MySettings4.lastToRevision = "HEAD"
+        MySettings4.lastUserMappingFileName = ""
+        MySettings4.lstTfsDomain = ""
+        MySettings4.SettingsKey = ""
+        MySettings4.userCustomTemporaryFolder = False
+        Me.svnUrlTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings4, "lastSvnUrl", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.svnUrlTextBox.Location = New System.Drawing.Point(100, 21)
         Me.svnUrlTextBox.Name = "svnUrlTextBox"
         Me.svnUrlTextBox.Size = New System.Drawing.Size(159, 21)
         Me.svnUrlTextBox.TabIndex = 1
-        Me.svnUrlTextBox.Text = MySettings10.lastSvnUrl
+        Me.svnUrlTextBox.Text = MySettings4.lastSvnUrl
         '
         'tfsUrlTextBox
         '
-        Me.tfsUrlTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings10, "lastTfsURL", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.tfsUrlTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings4, "lastTfsURL", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.tfsUrlTextBox.Location = New System.Drawing.Point(104, 219)
         Me.tfsUrlTextBox.Name = "tfsUrlTextBox"
         Me.tfsUrlTextBox.Size = New System.Drawing.Size(155, 21)
         Me.tfsUrlTextBox.TabIndex = 10
-        Me.tfsUrlTextBox.Text = MySettings10.lastTfsURL
+        Me.tfsUrlTextBox.Text = MySettings4.lastTfsURL
         '
         'Label6
         '
@@ -460,7 +487,7 @@ Partial Class MainWindow
         '
         'testTfsButton
         '
-        Me.testTfsButton.Location = New System.Drawing.Point(43, 272)
+        Me.testTfsButton.Location = New System.Drawing.Point(36, 303)
         Me.testTfsButton.Name = "testTfsButton"
         Me.testTfsButton.Size = New System.Drawing.Size(106, 26)
         Me.testTfsButton.TabIndex = 13
@@ -478,12 +505,12 @@ Partial Class MainWindow
         '
         'tfsProjectTextBox
         '
-        Me.tfsProjectTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings10, "lastTfsProject", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.tfsProjectTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings4, "lastTfsProject", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.tfsProjectTextBox.Location = New System.Drawing.Point(336, 245)
         Me.tfsProjectTextBox.Name = "tfsProjectTextBox"
         Me.tfsProjectTextBox.Size = New System.Drawing.Size(165, 21)
         Me.tfsProjectTextBox.TabIndex = 12
-        Me.tfsProjectTextBox.Text = MySettings10.lastTfsProject
+        Me.tfsProjectTextBox.Text = MySettings4.lastTfsProject
         '
         'Label9
         '
@@ -542,39 +569,39 @@ Partial Class MainWindow
         '
         'fromRevisionTextBox
         '
-        Me.fromRevisionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings10, "lastFromRevision", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.fromRevisionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings4, "lastFromRevision", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.fromRevisionTextBox.Location = New System.Drawing.Point(100, 74)
         Me.fromRevisionTextBox.Name = "fromRevisionTextBox"
         Me.fromRevisionTextBox.Size = New System.Drawing.Size(160, 21)
         Me.fromRevisionTextBox.TabIndex = 4
-        Me.fromRevisionTextBox.Text = MySettings10.lastFromRevision
+        Me.fromRevisionTextBox.Text = MySettings4.lastFromRevision
         '
         'tfsCollectionTextBox
         '
-        Me.tfsCollectionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings10, "lastTfsCollection", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.tfsCollectionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings4, "lastTfsCollection", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.tfsCollectionTextBox.Location = New System.Drawing.Point(104, 245)
         Me.tfsCollectionTextBox.Name = "tfsCollectionTextBox"
         Me.tfsCollectionTextBox.Size = New System.Drawing.Size(155, 21)
         Me.tfsCollectionTextBox.TabIndex = 11
-        Me.tfsCollectionTextBox.Text = MySettings10.lastTfsCollection
+        Me.tfsCollectionTextBox.Text = MySettings4.lastTfsCollection
         '
         'toRevisionTextBox
         '
-        Me.toRevisionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings10, "lastToRevision", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.toRevisionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings4, "lastToRevision", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.toRevisionTextBox.Location = New System.Drawing.Point(337, 74)
         Me.toRevisionTextBox.Name = "toRevisionTextBox"
         Me.toRevisionTextBox.Size = New System.Drawing.Size(160, 21)
         Me.toRevisionTextBox.TabIndex = 5
-        Me.toRevisionTextBox.Text = MySettings10.lastToRevision
+        Me.toRevisionTextBox.Text = MySettings4.lastToRevision
         '
         'userMapFileNameTextBox
         '
-        Me.userMapFileNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings10, "lastUserMappingFileName", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.userMapFileNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings4, "lastUserMappingFileName", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.userMapFileNameTextBox.Location = New System.Drawing.Point(100, 148)
         Me.userMapFileNameTextBox.Name = "userMapFileNameTextBox"
         Me.userMapFileNameTextBox.Size = New System.Drawing.Size(397, 21)
         Me.userMapFileNameTextBox.TabIndex = 7
-        Me.userMapFileNameTextBox.Text = MySettings10.lastUserMappingFileName
+        Me.userMapFileNameTextBox.Text = MySettings4.lastUserMappingFileName
         '
         'Label5
         '
@@ -663,8 +690,8 @@ Partial Class MainWindow
         Me.Label16.Size = New System.Drawing.Size(413, 39)
         Me.Label16.TabIndex = 24
         Me.Label16.Text = "Deletes all files and directories in the destination before the import." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A check-" & _
-            "in will be commited to apply these changes, so actual data can be recovered" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "at " & _
-            "the end of the import process."
+    "in will be commited to apply these changes, so actual data can be recovered" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "at " & _
+    "the end of the import process."
         '
         'Label15
         '
@@ -696,8 +723,8 @@ Partial Class MainWindow
         Me.Label18.Size = New System.Drawing.Size(367, 39)
         Me.Label18.TabIndex = 26
         Me.Label18.Text = "The starting state of the source is reproduced to the target." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "This is accomplish" & _
-            "ed substituting the actions of the starting revision with an" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "'add everything re" & _
-            "cursively' action."
+    "ed substituting the actions of the starting revision with an" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "'add everything re" & _
+    "cursively' action."
         '
         'Label17
         '
@@ -712,26 +739,8 @@ Partial Class MainWindow
         'overrideFirstRevisionRadioButton
         '
         Me.overrideFirstRevisionRadioButton.AutoSize = True
-        MySettings10.customTemporaryFolder = ""
-        MySettings10.hasAcceptedAgreement = False
-        MySettings10.lastDeleteTfsProject = False
-        MySettings10.lastFromRevision = "1"
-        MySettings10.lastOverrideFirstAction = False
-        MySettings10.lastReplayAllActions = True
-        MySettings10.lastSvnUrl = ""
-        MySettings10.lastSvnUserName = ""
-        MySettings10.lastTfsCollection = ""
-        MySettings10.lastTfsDirectory = ""
-        MySettings10.lastTfsProject = ""
-        MySettings10.lastTfsURL = ""
-        MySettings10.lastTfsUserName = ""
-        MySettings10.lastToRevision = "HEAD"
-        MySettings10.lastUserMappingFileName = ""
-        MySettings10.lstTfsDomain = ""
-        MySettings10.SettingsKey = ""
-        MySettings10.userCustomTemporaryFolder = False
-        Me.overrideFirstRevisionRadioButton.Checked = MySettings10.lastOverrideFirstAction
-        Me.overrideFirstRevisionRadioButton.DataBindings.Add(New System.Windows.Forms.Binding("Checked", MySettings10, "lastOverrideFirstAction", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.overrideFirstRevisionRadioButton.Checked = MySettings4.lastOverrideFirstAction
+        Me.overrideFirstRevisionRadioButton.DataBindings.Add(New System.Windows.Forms.Binding("Checked", MySettings4, "lastOverrideFirstAction", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.overrideFirstRevisionRadioButton.Enabled = False
         Me.overrideFirstRevisionRadioButton.Location = New System.Drawing.Point(3, 74)
         Me.overrideFirstRevisionRadioButton.Name = "overrideFirstRevisionRadioButton"
@@ -753,9 +762,9 @@ Partial Class MainWindow
         'cleanUpTFSCheckBox
         '
         Me.cleanUpTFSCheckBox.AutoSize = True
-        Me.cleanUpTFSCheckBox.Checked = MySettings10.lastDeleteTfsProject
+        Me.cleanUpTFSCheckBox.Checked = MySettings4.lastDeleteTfsProject
         Me.cleanUpTFSCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cleanUpTFSCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", MySettings10, "lastDeleteTfsProject", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.cleanUpTFSCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("Checked", MySettings4, "lastDeleteTfsProject", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.cleanUpTFSCheckBox.Location = New System.Drawing.Point(17, 186)
         Me.cleanUpTFSCheckBox.Name = "cleanUpTFSCheckBox"
         Me.cleanUpTFSCheckBox.Size = New System.Drawing.Size(336, 17)
@@ -763,11 +772,66 @@ Partial Class MainWindow
         Me.cleanUpTFSCheckBox.Text = "Delete all Team Foundation Server project content before import"
         Me.cleanUpTFSCheckBox.UseVisualStyleBackColor = True
         '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(267, 275)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(53, 13)
+        Me.Label21.TabIndex = 30
+        Me.Label21.Text = "Password"
+        '
+        'passwordBox
+        '
+        MySettings1.customTemporaryFolder = ""
+        MySettings1.hasAcceptedAgreement = False
+        MySettings1.lastDeleteTfsProject = False
+        MySettings1.lastFromRevision = "1"
+        MySettings1.lastOverrideFirstAction = False
+        MySettings1.lastReplayAllActions = True
+        MySettings1.lastSvnUrl = ""
+        MySettings1.lastSvnUserName = ""
+        MySettings1.lastTfsCollection = ""
+        MySettings1.lastTfsDirectory = ""
+        MySettings1.lastTfsProject = ""
+        MySettings1.lastTfsURL = ""
+        MySettings1.lastTfsUserName = ""
+        MySettings1.lastToRevision = "HEAD"
+        MySettings1.lastUserMappingFileName = ""
+        MySettings1.lstTfsDomain = ""
+        MySettings1.SettingsKey = ""
+        MySettings1.userCustomTemporaryFolder = False
+        Me.passwordBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings1, "lastTfsProject", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.passwordBox.Location = New System.Drawing.Point(336, 272)
+        Me.passwordBox.Name = "passwordBox"
+        Me.passwordBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.passwordBox.Size = New System.Drawing.Size(165, 21)
+        Me.passwordBox.TabIndex = 29
+        Me.passwordBox.Text = MySettings1.lastTfsProject
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(18, 275)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(55, 13)
+        Me.Label22.TabIndex = 27
+        Me.Label22.Text = "Username"
+        '
+        'usernameBox
+        '
+        Me.usernameBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", MySettings1, "lastTfsCollection", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.usernameBox.Location = New System.Drawing.Point(104, 272)
+        Me.usernameBox.Name = "usernameBox"
+        Me.usernameBox.Size = New System.Drawing.Size(155, 21)
+        Me.usernameBox.TabIndex = 28
+        Me.usernameBox.Text = MySettings1.lastTfsCollection
+        '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(561, 597)
+        Me.ClientSize = New System.Drawing.Size(561, 701)
         Me.Controls.Add(Me.mainTableLayoutPanel)
         Me.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -849,5 +913,9 @@ Partial Class MainWindow
     Friend WithEvents tfsDirectoryTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents svnDirectoryTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents passwordBox As System.Windows.Forms.TextBox
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents usernameBox As System.Windows.Forms.TextBox
 
 End Class

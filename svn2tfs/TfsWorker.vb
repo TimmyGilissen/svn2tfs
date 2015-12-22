@@ -5,6 +5,7 @@ Imports Microsoft.TeamFoundation.WorkItemTracking.Client
 Imports Microsoft.TeamFoundation.Client
 Imports Microsoft.TeamFoundation.Framework.Common
 Imports System.Collections.ObjectModel
+Imports System.Net
 
 Public Class TfsWorker
     Implements IDisposable
@@ -32,7 +33,7 @@ Public Class TfsWorker
     ''' <param name="uri"></param>
     ''' <param name="impersonificationUserName">If specified, requests inside project collections will be impersonated by him.</param>
     ''' <remarks></remarks>
-    Public Sub New(ByVal uri As Uri, ByVal localWorkspacePath As String, Optional ByVal impersonificationUserName As String = Nothing)
+    Public Sub New(ByVal uri As Uri, ByVal localWorkspacePath As String, ByVal username As String, ByVal password As String, Optional ByVal impersonificationUserName As String = Nothing)
 
         Console.Write("Connecting to Team Foundation Server... ")
 
@@ -40,7 +41,11 @@ Public Class TfsWorker
                 uri,
                 New UICredentialsProvider)
 
+        tfs.Credentials = New NetworkCredential(username, password)
+
         tfsLocationService = tfs.GetService(Of ILocationService)()
+
+
 
         Me.ImpersonificationUserName = impersonificationUserName
 

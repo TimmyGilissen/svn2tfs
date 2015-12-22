@@ -191,7 +191,7 @@ Public Class MainWindow
 
         Try
 
-            Dim tfs = CreateTfsWorker()
+            Dim tfs = CreateTfsWorker(username:=usernameBox.Text, password:=passwordBox.Text)
 
             DumpTfsProjectCollections(tfs)
 
@@ -266,7 +266,9 @@ Public Class MainWindow
                             tfsDirectoryTextBox.Text,
                             authors,
                             cleanUpTFSCheckBox.Checked,
-                            overrideFirstRevisionRadioButton.Checked)
+                            overrideFirstRevisionRadioButton.Checked,
+                            usernameBox.Text,
+                            passwordBox.Text)
 
         Catch ex As Exception
 
@@ -427,11 +429,9 @@ Public Class MainWindow
 
     End Sub
 
-    Private Function CreateTfsWorker(Optional ByVal userToImpersonate As String = Nothing) As TfsWorker
+    Private Function CreateTfsWorker(username As String, password As String, Optional ByVal userToImpersonate As String = Nothing) As TfsWorker
 
-        Return New TfsWorker(
-                            New Uri(tfsUrlTextBox.Text),
-                            userToImpersonate)
+        Return New TfsWorker(New Uri(tfsUrlTextBox.Text), String.Empty, username, password, userToImpersonate)
 
     End Function
 

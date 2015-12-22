@@ -1,0 +1,132 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+svn2tfs
+</name>
+</assembly>
+<members>
+<member name="P:svn2tfs.MainWindow.uiState">
+	<summary>
+ Changes UI elements states (i.e. Enabled)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:svn2tfs.MainWindow.UpdateUI">
+	<summary>
+ Update controls' state
+ </summary>
+	<remarks></remarks>
+</member><member name="T:svn2tfs.Importer.RevisionMap">
+	<summary>
+ Maps SVN revisions to TFS changesets and provides some logic.
+ </summary>
+	<remarks>If the SVN revision is not found, the .Item property returns the TFS changeset for the nearest SVN revision happened before the specified one.
+ This behaviour is correct since not all revisions are imported to TFS (not those that have no replayable action in them), so referring to previous revisions is correct.</remarks>
+</member><member name="F:svn2tfs.Importer.TfsCleanUpComment">
+	<summary>
+ This is the comment that will be used for the TFS clean up check-in before import.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:svn2tfs.Importer.tfsReplayAction(SharpSvn.SvnChangeItem,Microsoft.TeamFoundation.VersionControl.Client.Workspace,System.String,svn2tfs.Importer.RevisionMap)">
+	<summary>
+	</summary>
+	<param name="change"></param>
+	<param name="tfsWorkspace"></param>
+	<param name="svn2tfsRevisionMap"></param>
+	<returns></returns>
+	<remarks>True if an SVN update is needed after this call.</remarks>
+</member><member name="M:svn2tfs.Importer.tfsCheckIn(Microsoft.TeamFoundation.VersionControl.Client.Workspace,svn2tfs.SvnWorker.LogItem,System.String,svn2tfs.Importer.RevisionMap)">
+	<summary>
+	</summary>
+	<param name="tfsWorkspace"></param>
+	<param name="svnLog"></param>
+	<param name="mappedUser"></param>
+	<param name="svn2tfsRevisionMap"></param>
+	<returns></returns>
+	<remarks>Returns TFS changset. -1 if no changeset has been checked-in.</remarks>
+</member><member name="M:svn2tfs.Importer.DeleteTfsWorkspaceContent(System.String,Microsoft.TeamFoundation.VersionControl.Client.Workspace,System.Boolean)">
+	<summary>
+	</summary>
+	<param name="rootDirectory"></param>
+	<param name="workspace">If <c>Nothing</c>, deletes will not be pendeded to <c>workspace</c>.</param>
+	<param name="excludeSvnDirectories">Set to True to preserve .svn directories and their content</param>
+	<returns>True if directory has been emptied.</returns>
+	<remarks></remarks>
+</member><member name="P:svn2tfs.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:svn2tfs.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:svn2tfs.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:svn2tfs.SvnWorker.GetInvolvedUsers(System.Int64,System.Int64)">
+	<summary>
+ Returns a list of all involved users from revision <c>fromRevision</c> to revision <c>toRevision</c>. This might take a while, depending on the lenght of the range specified.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:svn2tfs.SvnWorker.SvnChangeItemSorter.SvnChangeVerboseActionEnum">
+	<summary>
+ More exaustive enum of changes. As a benefit, the enum is sorted on action priority
+ </summary>
+	<remarks></remarks>
+</member><member name="M:svn2tfs.SvnWorker.SvnChangeItemSorter.GetSvnChangeVerboseAction(SharpSvn.SvnChangeItem)">
+	<summary>
+ Converts an <c>SvnChangeItem</c> item to a <c>SvnChangeActionInternalEnum</c> item.
+ </summary>
+	<param name="item"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:svn2tfs.SvnWorker.SvnChangeItemSorter.SvnChangeItemActionComparer">
+	<summary>
+ Sort change items on action replay priority.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:svn2tfs.SvnWorker.SvnChangeItemSorter.SvnChangeItemPathComparer">
+	<summary>
+ Sort change items on path priority.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:svn2tfs.TfsWorker.ImpersonificationUserName">
+	<summary>
+ If specified, requests inside project collections will be impersonated by him.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:svn2tfs.TfsWorker.createdWorkspaces">
+	<summary>
+ List of created workspaces, used to delete them when disposing the worker (we want /temporary/ workspaces).
+ </summary>
+	<remarks></remarks>
+</member><member name="M:svn2tfs.TfsWorker.#ctor(System.Uri,System.String,System.String,System.String,System.String)">
+	<summary>
+ Connects to Team Foundation Server using specified URI and optional impersonificationuserName.
+ </summary>
+	<param name="uri"></param>
+	<param name="impersonificationUserName">If specified, requests inside project collections will be impersonated by him.</param>
+	<remarks></remarks>
+</member><member name="M:svn2tfs.TfsWorker.GetProjectCollection(Microsoft.TeamFoundation.Framework.Client.CatalogNode,System.String)">
+	<summary>
+ Gets a project collection. If userName is specified, the returned object is impersonated by him.
+ </summary>
+	<param name="projectCollectionNode"></param>
+	<param name="impersonificationUserName">Username to be impersonated. Nothing or String.Empty otherwise.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:svn2tfs.TfsWorker.TeamProjectExistsOrThrowException(System.String,System.String)">
+	<summary>
+ Throws an Exception if team project does not exist.
+ </summary>
+	<param name="projectCollectionDisplayName"></param>
+	<param name="teamProjectName"></param>
+	<remarks></remarks>
+</member>
+</members>
+</doc>
